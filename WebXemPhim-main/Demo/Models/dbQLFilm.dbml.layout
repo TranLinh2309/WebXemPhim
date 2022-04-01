@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.375, 8.5" name="dbQLFilm">
+  <DataContextMoniker Name="/dbQLFilmDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a473bc35-acf0-418a-8794-227e026e2545" absoluteBounds="0.875, 0.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dbQLFilmDataContext/AdminPro" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb85e8d1-3f85-45c6-b9ef-5757e9977f2d" absoluteBounds="0.89, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7888c482-35e3-46c7-8275-57868ecce0ac" absoluteBounds="0.5, 2.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/dbQLFilmDataContext/BinhLuan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd9ec4af-95cb-4449-885a-18d74b92726c" absoluteBounds="0.515, 3.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c3997c80-905d-48fe-8153-28478c26c387" absoluteBounds="0.75, 5.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/dbQLFilmDataContext/ChiTietLoai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e22d994a-852b-4476-bfb9-350aef13150e" absoluteBounds="0.765, 5.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a764e57-8a0c-490d-b97e-8e2208237ae7" absoluteBounds="0.75, 6.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbQLFilmDataContext/DanhGia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03d2eafd-3a4f-478c-b5f6-5b90e4b7aa8a" absoluteBounds="0.765, 7.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9852a854-5b1f-4ccc-9705-e555bb9efab5" absoluteBounds="3.75, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dbQLFilmDataContext/DienVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0d2f5e1-e06e-465b-8621-f2474d46e9a2" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a1a5410d-b021-4cab-a00f-823e513e508b" absoluteBounds="3.75, 2.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/dbQLFilmDataContext/Loai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8e0296a-9739-49a2-9280-34c73f0ad210" absoluteBounds="3.765, 3.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.90625 : 4.06899251302083); (3.90625 : 6.22524251302083); (2.75 : 6.22524251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLFilmDataContext/Loai/Loai_ChiTietLoai" />
+      <nodes>
+        <classShapeMoniker Id="a1a5410d-b021-4cab-a00f-823e513e508b" />
+        <classShapeMoniker Id="c3997c80-905d-48fe-8153-28478c26c387" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="81418f9d-4ec8-4073-9b54-9fafe70d6e4c" absoluteBounds="4.125, 4.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/dbQLFilmDataContext/NamPhatHanh" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b8aaeaf-3ae9-40b3-9ccf-eb92c74f4019" absoluteBounds="4.14, 5.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7b5af9fc-8ccf-461d-a341-e2705e2b0849" absoluteBounds="6.5, 1, 2, 1.9631982421875">
+      <DataClassMoniker Name="/dbQLFilmDataContext/NguoiDung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f2a543d-e6f0-4ac0-baec-8d01247e4321" absoluteBounds="6.515, 1.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.5 : 2.9631982421875); (7.5 : 3.60659912109375); (6.61458333333333 : 3.60659912109375 : JumpStart); (6.44791666666667 : 3.60659912109375 : JumpEnd); (6 : 3.60659912109375); (6 : 4.31899251302083); (3.98958333333333 : 4.31899251302083 : JumpStart); (3.82291666666667 : 4.31899251302083 : JumpEnd); (2.875 : 4.31899251302083); (2.875 : 3.60659912109375); (2.5 : 3.60659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLFilmDataContext/NguoiDung/NguoiDung_BinhLuan" />
+      <nodes>
+        <classShapeMoniker Id="7b5af9fc-8ccf-461d-a341-e2705e2b0849" />
+        <classShapeMoniker Id="7888c482-35e3-46c7-8275-57868ecce0ac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.53125 : 2.9631982421875); (6.53125 : 7.41429768880208); (2.75 : 7.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLFilmDataContext/NguoiDung/NguoiDung_DanhGia" />
+      <nodes>
+        <classShapeMoniker Id="7b5af9fc-8ccf-461d-a341-e2705e2b0849" />
+        <classShapeMoniker Id="5a764e57-8a0c-490d-b97e-8e2208237ae7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a4b766ac-8426-422c-839c-7a2b8e766640" absoluteBounds="6.625, 3.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dbQLFilmDataContext/Phim" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b65612ac-ff87-4ba4-9c71-205509f2a2d2" absoluteBounds="6.64, 4.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.625 : 4.51609537760417); (6.61458333333333 : 4.51609537760417 : JumpStart); (6.44791666666667 : 4.51609537760417 : JumpEnd); (3.98958333333333 : 4.51609537760417 : JumpStart); (3.82291666666667 : 4.51609537760417 : JumpEnd); (2.5 : 4.51609537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLFilmDataContext/Phim/Phim_BinhLuan" />
+      <nodes>
+        <classShapeMoniker Id="a4b766ac-8426-422c-839c-7a2b8e766640" />
+        <classShapeMoniker Id="7888c482-35e3-46c7-8275-57868ecce0ac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.625 : 4.73159912109375); (6.61458333333333 : 4.73159912109375 : JumpStart); (6.44791666666667 : 4.73159912109375 : JumpEnd); (3.98958333333333 : 4.73159912109375 : JumpStart); (3.82291666666667 : 4.73159912109375 : JumpEnd); (2.65625 : 4.73159912109375); (2.65625 : 5.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLFilmDataContext/Phim/Phim_ChiTietLoai" />
+      <nodes>
+        <classShapeMoniker Id="a4b766ac-8426-422c-839c-7a2b8e766640" />
+        <classShapeMoniker Id="c3997c80-905d-48fe-8153-28478c26c387" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.625 : 6.48240397135417); (7.625 : 6.98839634440104); (6.61458333333333 : 6.98839634440104 : JumpStart); (6.44791666666667 : 6.98839634440104 : JumpEnd); (2.75 : 6.98839634440104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLFilmDataContext/Phim/Phim_DanhGia" />
+      <nodes>
+        <classShapeMoniker Id="a4b766ac-8426-422c-839c-7a2b8e766640" />
+        <classShapeMoniker Id="5a764e57-8a0c-490d-b97e-8e2208237ae7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 3.31614868164062); (6.44791666666667 : 3.31614868164062 : JumpStart); (6.61458333333333 : 3.31614868164062 : JumpEnd); (7.41666666666667 : 3.31614868164062 : JumpStart); (7.58333333333333 : 3.31614868164062 : JumpEnd); (8.59375 : 3.31614868164062); (8.59375 : 3.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLFilmDataContext/Loai/Loai_Phim" />
+      <nodes>
+        <classShapeMoniker Id="a1a5410d-b021-4cab-a00f-823e513e508b" />
+        <classShapeMoniker Id="a4b766ac-8426-422c-839c-7a2b8e766640" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 5.47199625651042); (6.44791666666667 : 5.47199625651042 : JumpStart); (6.61458333333333 : 5.47199625651042 : JumpEnd); (6.625 : 5.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLFilmDataContext/NamPhatHanh/NamPhatHanh_Phim" />
+      <nodes>
+        <classShapeMoniker Id="81418f9d-4ec8-4073-9b54-9fafe70d6e4c" />
+        <classShapeMoniker Id="a4b766ac-8426-422c-839c-7a2b8e766640" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dcb5f899-4f00-4bd9-b4ec-4335ecaacfaf" absoluteBounds="9.5, 1.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/dbQLFilmDataContext/Phim_Dienvien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47166536-4dbb-4de9-9579-df73ca61ae44" absoluteBounds="9.515, 1.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.75 : 0.84375); (10.5 : 0.84375); (10.5 : 1.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLFilmDataContext/DienVien/DienVien_Phim_Dienvien" />
+      <nodes>
+        <classShapeMoniker Id="9852a854-5b1f-4ccc-9705-e555bb9efab5" />
+        <classShapeMoniker Id="dcb5f899-4f00-4bd9-b4ec-4335ecaacfaf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.625 : 4.84699625651042); (9.71875 : 4.84699625651042); (9.71875 : 2.69399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLFilmDataContext/Phim/Phim_Phim_Dienvien" />
+      <nodes>
+        <classShapeMoniker Id="a4b766ac-8426-422c-839c-7a2b8e766640" />
+        <classShapeMoniker Id="dcb5f899-4f00-4bd9-b4ec-4335ecaacfaf" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="300a8bda-cd26-4ddf-b972-079bec95b2e5" absoluteBounds="10, 3.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/dbQLFilmDataContext/QuocGia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e009d1f-7288-429e-bb96-3bb6af998579" absoluteBounds="10.015, 3.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10 : 4.15949625651042); (9.80208333333333 : 4.15949625651042 : JumpStart); (9.63541666666667 : 4.15949625651042 : JumpEnd); (8.625 : 4.15949625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLFilmDataContext/QuocGia/QuocGia_Phim" />
+      <nodes>
+        <classShapeMoniker Id="300a8bda-cd26-4ddf-b972-079bec95b2e5" />
+        <classShapeMoniker Id="a4b766ac-8426-422c-839c-7a2b8e766640" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a04223e3-3659-468a-a52a-e52ddbad56f0" absoluteBounds="10.125, 5.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/dbQLFilmDataContext/TrangThai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="313bbec9-1ec9-4dac-a4a5-df7846b23876" absoluteBounds="10.14, 5.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.125 : 5.72199625651042); (8.625 : 5.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLFilmDataContext/TrangThai/TrangThai_Phim" />
+      <nodes>
+        <classShapeMoniker Id="a04223e3-3659-468a-a52a-e52ddbad56f0" />
+        <classShapeMoniker Id="a4b766ac-8426-422c-839c-7a2b8e766640" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

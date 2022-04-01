@@ -1,0 +1,286 @@
+﻿@model Demo.Models.Phim
+
+@{
+    ViewBag.Title = "WatchFilm";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<section>
+    <div style="
+          background-color: rgb(99, 98, 98);
+          font-family: 'Times New Roman', Times, serif;
+        ">
+        <div class="container pb-2">
+            <div class="row">
+                <div class="col-12 col-md-7 col-xl-9"
+                     style="background-color: rgb(27, 27, 27)">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-xl-4 mt-3">
+                            <div class="ImageText">
+                                <img src="~/img/poster/@Html.DisplayFor(model => model.anh_bia)"
+                                     class="img-fluid"
+                                     style="width: 20rem; height: 22rem"
+                                     alt="" />
+                                <div class="TextInImage text-center">
+                                    <h4>DownLoad</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-xl-7 mt-3">
+                            <p class="m-0 p-0 fs-4" style="color: rgb(221, 147, 9)">
+                                <strong>@Html.DisplayFor(model => model.ten_phim)</strong>
+                            </p>
+                            
+                            <div style="background-color: rgb(54, 54, 54); color: whitesmoke"
+                                 class="pt-2 mt-1 ps-2">
+                                <p>
+                                    @Html.DisplayFor(model => model.mo_ta)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="
+                  row
+                  my-3
+                  mx-1
+                  justify-content-center
+                  align-content-center
+                "
+                         style="
+                  background-color: rgb(54, 54, 54);
+                  color: whitesmoke;
+                  height: 32rem;
+                ">
+                        <div class="col-12 col-md-12 col-xl-12">
+                            <div class="fs-4 my-1">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item w-100"
+                                            style="height: 30rem"
+                                            src="@Html.DisplayFor(model => model.link_phim)"
+                                            allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background-color: rgb(54, 54, 54); color: whitesmoke"
+                         class="pt-2 mt-3 pb-2 ps-2">
+                        <div>
+                            <p class="m-0 p-0 d-inline fs-4"
+                               style="color: rgb(255, 166, 0)">
+                                Đánh Giá Phim
+                            </p>
+                            <p class="m-0 p-0 d-inline">(559 lượt)</p>
+                        </div>
+                        <div class="d-inline">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="pt-2 mt-3 pb-2 ps-2 bg-white text-black mb-3">
+                        <div>
+                            <p class="m-0 p-0 d-inline fs-3"
+                               style="color: rgb(255, 166, 0)">
+                                Bình Luận
+                            </p>
+                        </div>
+                        <div>
+                            <div>
+                                <ul class="nav flex-column align-content-start"
+                                    style="height: 8rem">
+                                    <li class="nav-item">
+                                        <div class="
+                            bg-black
+                            rounded-circle
+                            mx-2
+                            p-3
+                            d-inline-block
+                          ">
+                                            <a class="nav-link" href="#">
+                                                <i class="fas fa-user fs-2 text-white"></i>
+                                            </a>
+                                        </div>
+                                        <input type="text"
+                                               style="width: 47rem"
+                                               class="d-inline-block h-50 p-2"
+                                               placeholder="Thêm Bình Luận" />
+                                        <button class="btn btn-primary text-white h-50"
+                                                style="width: 5rem">
+                                            Gửi
+                                        </button>
+                                    </li>
+                                </ul>
+                                <ul class="nav flex-column align-content-start"
+                                    style="height: 8rem">
+                                    <li class="nav-item ps-5">
+                                        <div class="
+                            bg-black
+                            rounded-circle
+                            mx-2
+                            p-3
+                            d-inline-block
+                          ">
+                                            <a class="nav-link" href="#">
+                                                <i class="fas fa-user fs-2 text-white"></i>
+                                            </a>
+                                        </div>
+
+                                        <div class="d-inline-block">
+                                            <p style="color: rgb(27, 27, 168)">
+                                                <strong>Hoàng Long</strong>
+                                            </p>
+                                            <p>Phim Rất Hay!</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="nav flex-column align-content-start"
+                                    style="height: 8rem">
+                                    <li class="nav-item ps-5">
+                                        <div class="
+                            bg-black
+                            rounded-circle
+                            mx-2
+                            p-3
+                            d-inline-block
+                          ">
+                                            <a class="nav-link" href="#">
+                                                <i class="fas fa-user fs-2 text-white"></i>
+                                            </a>
+                                        </div>
+                                        <div class="d-inline-block">
+                                            <p style="color: rgb(27, 27, 168)">
+                                                <strong>Bảo Trọng</strong>
+                                            </p>
+                                            <p>Admin làm sao để xem đỡ mờ ạ, e xem mờ qué</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 col-xl-3">
+                    <div class="card" style="border: 1px solid rgb(99, 98, 98)">
+                        <div class="card-header text-danger"
+                             style="background-color: rgb(99, 98, 98)">
+                            <h3 class="w3-center ps-3"
+                                style="
+                      color: rgb(219, 145, 7);
+                      border-left: 1rem solid rgb(219, 145, 7);
+                    ">
+                                Phim Sắp Chiếu
+                                <i class="fas fa-star"></i>
+                            </h3>
+                        </div>
+                        <div class="card-body"
+                             style="background-color: rgb(27, 27, 27)">
+                            <div class="row">
+                                <div class="col-12">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" aria-current="page" href="#">
+                                                <img src="~/img/poster/HiemHoaDietVong.jpg"
+                                                     class="float-start clearfix me-3"
+                                                     alt="" />
+                                                <h6 class="text-white">Hiểm Họa Diệt Vong</h6>
+                                                <p class="p-0 m-0">The Colony</p>
+                                                <p class="p-0 m-0">1,481 View</p>
+                                                <div class="d-inline-block text-warning">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" aria-current="page" href="#">
+                                                <img src="~/img/poster/Letmein.jpg"
+                                                     class="float-start clearfix me-3"
+                                                     alt="" />
+                                                <h6 class="text-white">Hãy để chúng tôi vào</h6>
+                                                <p class="p-0 m-0">Let Us In</p>
+                                                <p class="p-0 m-0">1,822 View</p>
+                                                <div class="d-inline-block text-warning">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" aria-current="page" href="#">
+                                                <img src="~/img/poster/QuyetDinhCuaChua.jpg"
+                                                     class="float-start clearfix me-3"
+                                                     alt="" />
+                                                <h6 class="text-white">Quyết Định Của Chúa</h6>
+                                                <p class="p-0 m-0">The God Committee</p>
+                                                <p class="p-0 m-0">1,579 View</p>
+                                                <div class="d-inline-block text-warning">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" aria-current="page" href="#">
+                                                <img src="~/img/poster/Thenun_2.jpg"
+                                                     class="float-start clearfix me-3"
+                                                     alt=""
+                                                     height="140"
+                                                     width="100" />
+                                                <h6 class="text-white">Ác Quỷ Ma Sơ</h6>
+                                                <p class="p-0 m-0">The Nun</p>
+                                                <p class="p-0 m-0">2,338 View</p>
+                                                <div class="d-inline-block text-warning">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" aria-current="page" href="#">
+                                                <img src="~/img/poster/Shangchi.jpg"
+                                                     class="float-start clearfix me-3"
+                                                     alt="" />
+                                                <h6 class="text-white">
+                                                    Shang-Chi Và Huyền Thoại Thập Nhẫn
+                                                </h6>
+                                                <p class="p-0 m-0">SThe Legend Of The Ten Ring</p>
+                                                <p class="p-0 m-0">2,783 View</p>
+                                                <div class="d-inline-block text-warning">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Quan Ly</title>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Icon/css/all.min.css" rel="stylesheet" />
+    
+</head>
+
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand"
+                    })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" style="margin-left: 0px; margin-right: 0px ; font-size: 10px;padding: 0px">
+                        <li>@Html.ActionLink("Phim", "Index", "AdminFilm")</li>
+                        <li>@Html.ActionLink("Người Dùng", "NguoidungUser", "QlUsers")</li>
+                        <li>@Html.ActionLink("Diễn Viên", "Index", "DienViens")</li>
+                        <li>@Html.ActionLink("Trạng Thái", "Index", "AdminTrangThai")</li>
+                        <li>@Html.ActionLink("Quốc Gia", "Index", "AdminQuocGia")</li>
+                        <li>@Html.ActionLink("Thể Loại", "Index", "AdminLoai")</li>
+                        <li>@Html.ActionLink("Bình Luận", "Index", "AdminBinhLuan")</li>
+                        <li>@Html.ActionLink("Đánh Giá", "Index", "AdminDanhGia")</li>
+                        <li>@Html.ActionLink("Năm Phát Hành ", "Index", "ReleaseYear")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+    <header>
+        <div class="text-white mb-2 border-bottom border-dark" style="font-family: 'Times New Roman', Times, serif">
+            <nav class="
+            navbar navbar-expand-lg navbar-light
+            bg-dark
+            align-content-center
+          ">
+                <div class="container">
+                    <div>
+                        <a style="text-decoration:none" href="file:///C:/Users/Admin/Downloads/%C4%90%E1%BB%93%20%C3%A1n%20chuy%C3%AAn%20ng%C3%A0nh/HTML/index.html">
+                            <i class="fas fa-film fa-2x" style="color: rgb(221, 147, 9)"></i>
+                        </a>
+                        <a class="navbar-brand fs-2" style="color: rgb(221, 147, 9); text-decoration:none"
+                           href="file:///C:/Users/Admin/Downloads/%C4%90%E1%BB%93%20%C3%A1n%20chuy%C3%AAn%20ng%C3%A0nh/HTML/index.html">SuperFilm</a>
+                    </div>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between fs-5" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <ul class="nav navbar-nav" style="margin-left: 0px; margin-right: 0px; font-size: 20px; padding-left: 10px; padding-right:10px; padding-top:5px">
+                                <li style="margin-left: 10px; margin-right: 10px">@Html.ActionLink("Phim", "Index", "AdminFilm", null, new { @class = "nav-link text-white" })</li>
+                                <li style="margin-right: 10px">@Html.ActionLink("Người Dùng", "NguoidungUser", "QlUsers", null, new { @class = "nav-link text-white" })</li>
+                                <li style="margin-right: 10px">@Html.ActionLink("Diễn Viên", "Index", "DienViens", null, new { @class = "nav-link text-white" })</li>
+                                <li style="margin-right: 10px">@Html.ActionLink("Trạng Thái", "Index", "AdminTrangThai", null, new { @class = "nav-link text-white" })</li>
+                                <li style="margin-right: 10px">@Html.ActionLink("Quốc Gia", "Index", "AdminQuocGia", null, new { @class = "nav-link text-white" })</li>
+                                <li style="margin-right: 10px">@Html.ActionLink("Thể Loại", "Index", "AdminLoai", null, new { @class = "nav-link text-white" })</li>
+                                <li style="margin-right: 10px">@Html.ActionLink("Bình Luận", "Index", "AdminBinhLuan", null, new { @class = "nav-link text-white" })</li>
+                                <li style="margin-right: 10px">@Html.ActionLink("Đánh Giá", "Index", "AdminDanhGia", null, new { @class = "nav-link text-white" })</li>
+                                <li style="margin-right: 10px">@Html.ActionLink("Năm Phát Hành ", "Index", "ReleaseYear", null, new { @class = "nav-link text-white" })</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        
+    </div>
+
+
+
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

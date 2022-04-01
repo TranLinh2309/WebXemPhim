@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>SuperFilm</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Icon/css/all.min.css" rel="stylesheet" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <style>
+        .ImageText {
+            position: relative;
+            max-width: 800px; /* Maximum width */
+            margin: 0 auto; /* Center it */
+        }
+
+            .ImageText h4:hover {
+                color: orange;
+            }
+
+            .ImageText .TextInImage {
+                position: absolute; /* Position the background text */
+                bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+                background: rgb(0, 0, 0); /* Fallback color */
+                background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+                color: #f1f1f1; /* Grey text */
+                width: 100%; /* Full width */
+                padding: 20px; /* Some padding */
+            }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="text-white mb-2 border-bottom border-dark"
+             style="font-family: 'Times New Roman', Times, serif">
+            <nav class="
+            navbar navbar-expand-lg navbar-light
+            bg-dark
+            align-content-center
+          ">
+                <div class="container">
+                    <div>
+                        <a href="file:///C:/Users/Admin/Downloads/%C4%90%E1%BB%93%20%C3%A1n%20chuy%C3%AAn%20ng%C3%A0nh/HTML/index.html">
+                            <i class="fas fa-film fa-2x"
+                               style="color: rgb(221, 147, 9)"></i>
+                        </a>
+                        <a class="navbar-brand fs-2"
+                           style="color: rgb(221, 147, 9)"
+                           href="file:///C:/Users/Admin/Downloads/%C4%90%E1%BB%93%20%C3%A1n%20chuy%C3%AAn%20ng%C3%A0nh/HTML/index.html">SuperFilm</a>
+                    </div>
+
+                    <button class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup"
+                            aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between fs-5"
+                         id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <div>
+                                @Html.ActionLink("Phim Mới", "Index", "LoadPhim", null, new { @class = "nav-link text-info" })
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle"
+                                   style="color: rgb(221, 147, 9)"
+                                   href="#"
+                                   role="button"
+                                   id="dropdownMenuLink"
+                                   data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    Thể Loại
+                                </a>
+
+                                <ul class="dropdown-menu bg-dark bg-opacity-75"
+                                    style="width: 40rem"
+                                    aria-labelledby="dropdownMenuLink">
+                                    <div class="row">
+                                        <li>@Html.Action("TypeFilm", "LoadPhim")</li>
+                                    </div>
+                                </ul>
+                        </div>
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle"
+                           style="color: rgb(221, 147, 9)"
+                           href="#"
+                           role="button"
+                           id="dropdownMenuLink"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Quốc Gia
+                            </a>
+
+                            <ul class="dropdown-menu bg-dark bg-opacity-75"
+                            style="width: 40rem"
+                            aria-labelledby="dropdownMenuLink">
+                                <div class="row">
+                                    <li>@Html.Action("TypeNation", "LoadPhim")</li>
+
+                                </div>
+                            </ul>
+                    </div>
+        <div class="dropdown">
+            <a class="nav-link dropdown-toggle"
+               style="color: rgb(221, 147, 9)"
+               href="#"
+               role="button"
+               id="dropdownMenuLink"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">
+                Năm Phát Hành
+            </a>
+
+            <ul class="dropdown-menu bg-dark bg-opacity-75"
+                style="width: 40rem"
+                aria-labelledby="dropdownMenuLink">
+                <div class="row">
+                <li>@Html.Action("TypeYear", "LoadPhim")</li>
+
+</div>
+        </ul>
+        </div>
+        <div class="dropdown">
+            <a class="nav-link dropdown-toggle"
+               style="color: rgb(221, 147, 9)"
+               href="#"
+               role="button"
+               id="dropdownMenuLink"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">
+                Trạng Thái
+            </a>
+
+            <ul class="dropdown-menu bg-dark bg-opacity-75"
+                style="width: 40rem"
+                aria-labelledby="dropdownMenuLink">
+                <div class="row">
+
+                <li>@Html.Action("TypeStatus", "LoadPhim")</li>
+
+
+</div>
+        </ul>
+        </div>
+        </div>
+        <div class="navbar-nav">
+            <div>
+                @*<input type="text" placeholder="Tìm Kiếm" />
+                <i class="fas fa-search fa-1x me-2"></i>*@
+                @using (Html.BeginForm("Search", "LoadPhim", FormMethod.Get)) // -- phần thay đổi
+                {
+                    @Html.TextBox("searchMovie", "", new { @placeholder = "Tìm kiếm phim" })
+                    <input type="submit" class="btn btn-primary" value="Tìm kiếm" />
+                }
+            </div>
+            <div>
+                <button class="bg-white">@Html.ActionLink("Đăng nhập", "DangNhap", "Users", null, new { @class = "text-dark" })</button>
+                <button class="bg-white">@Html.ActionLink("Đăng ký", "DangKy", "Users", null, new { @class = "text-dark" })</button>
+            </div>
+
+        </div>
+        </div>
+        </div>
+        </nav>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer>
+        <div style="
+          background-color: rgb(51, 53, 54);
+          font-family: 'Times New Roman', Times, serif;
+        ">
+            <div class="container">
+                <div class="row text-white" style="background-color: rgb(51, 53, 54)">
+                    <div class="col-12 col-md-3 col-3 pb-3 pt-3">
+                        <i class="fas fa-film fa-3x d-inline"
+                           style="color: rgb(221, 147, 9)"></i>
+                        <div class="display-5 d-inline mt-2"
+                             style="color: rgb(221, 147, 9)">
+                            SuperFilm
+                        </div>
+                        <div class="mb-4">
+                            Xem phim mới miễn phí nhanh chất lượng cao. Xem Phim online Việt
+                            Sub, Thuyết minh, lồng tiếng chất lượng HD. Xem phim nhanh
+                            online chất lượng cao
+                        </div>
+                        <div style="color: rgb(151, 173, 179)">
+                            <i class="fas fa-phone-alt fa-2x p-2 d-inline"></i>
+                            <div class="d-inline fs-3">Email Liên Hệ:</div>
+                            <div class="d-inline fs-3">SuperFilm@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3 col-xl-3 pb-3"
+                         style="font-family: 'Times New Roman', Times, serif">
+                        <h4 class="fst-italic my-3">Phim Moi</h4>
+                        <a href="#" class="link-warning" style="text-decoration: none">Phim Lẻ Mới</a>
+                        <hr />
+                        <a href="#" class="link-warning" style="text-decoration: none">Phim Bộ Mới</a>
+                        <hr />
+                        <a href="#" class="link-warning" style="text-decoration: none">Phim Chiếu Rạp</a>
+                        <hr />
+                        <a href="#" class="link-warning" style="text-decoration: none">Phim Sắp Chiếu</a>
+                    </div>
+                    <div class="col-12 col-md-3 col-xl-3 pb-3"
+                         style="font-family: 'Times New Roman', Times, serif">
+                        <h4 class="fst-italic my-3">Phim Lẻ</h4>
+                        <a href="#" class="link-warning" style="text-decoration: none">Phim Hành Động</a>
+                        <hr />
+                        <a href="#" class="link-warning" style="text-decoration: none">Phim Kiếm Hiệp</a>
+                        <hr />
+                        <a href="Group.html"
+                           class="link-warning"
+                           style="text-decoration: none">Phim Kinh Dị</a>
+                        <hr />
+                        <a href="#" class="link-warning" style="text-decoration: none">Phim Hoạt Hình</a>
+                    </div>
+                    <div class="col-12 col-md-3 col-xl-3 pb-3"
+                         style="font-family: 'Times New Roman', Times, serif">
+                        <h4 class="fst-italic my-3">Phim Bộ</h4>
+                        <a href="#" class="link-warning" style="text-decoration: none">Phim Bộ Hàn Quốc</a>
+                        <hr />
+                        <a href="#" class="link-warning" style="text-decoration: none">Phim Bộ Trung Quốc</a>
+                        <hr />
+                        <a href="#" class="link-warning" style="text-decoration: none">Phim Bộ Mỹ</a>
+                        <hr />
+                        <a href="#" class="link-warning" style="text-decoration: none">Phim Bộ Việt Nam</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("Slides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1;
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 5000); // Change image every 2 seconds
+        }
+    </script>
+
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Demo.Models.NamPhatHanh>
+
+<div class="card-body">
+    <div class="row">
+        @foreach (var types in Model)
+        {
+            <div class="col-12 col-md-12 col-xl-3 mb-3">
+                <a href="@Url.Action("YearForType","LoadPhim", new { id= types.id_nam} )" class="dropdown-item" style="color: rgb(221, 147, 9)">
+                    @types.nam_phat_hanh
+                </a>
+            </div>
+        }
+    </div>
+</div>
+

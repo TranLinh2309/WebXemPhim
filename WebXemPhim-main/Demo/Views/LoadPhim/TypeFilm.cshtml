@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Demo.Models.Loai>
+
+<div class="card-body" >
+    <div class="row">
+        @foreach (var type in Model)
+        {
+            <div class="col-12 col-md-12 col-xl-3 mb-3">
+                <a href="@Url.Action("FilmForType","LoadPhim", new { id= type.id_loai} )" class="dropdown-item" style="color: rgb(221, 147, 9)">
+                    @type.ten_loai
+                </a>
+            </div>
+        }
+    </div>
+</div>

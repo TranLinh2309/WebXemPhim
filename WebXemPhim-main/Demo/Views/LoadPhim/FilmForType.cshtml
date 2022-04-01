@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "FilmForType";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<section>
+    <div style="
+          background-color: rgb(99, 98, 98);
+          font-family: 'Times New Roman', Times, serif;
+        ">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-xl-9">
+                    <div class="card" style="border: 1px solid rgb(99, 98, 98)">
+                        <div class="card-header" style="background-color: rgb(99, 98, 98)">
+                            <div class="row align-content-center pt-2" style="height: 3rem">
+                                <div class="col-8">
+                                    <h2 class="w3-center ps-3" style="
+                          color: rgb(219, 145, 7);
+                          border-left: 1rem solid rgb(219, 145, 7);
+                        ">
+                                        Phim Chiếu Rạp
+                                        <i class="fas fa-star"></i>
+                                    </h2>
+                                </div>
+                                <div class="col-4 d-inline text-end">
+                                    <a href="#" class="fs-4" style="color: rgb(219, 145, 7); text-decoration: none">
+                                        Xem Thêm <i class="fas fa-caret-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body" style="background-color: rgb(99, 98, 98)">
+                            <div class="row">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="col-12 col-md-10 col-xl-4 mb-3">
+                                        <a href="@Url.Action("Details","LoadPhim", new { id= item.id_phim} )" style="text-decoration:none">
+                                            <div class="ImageText">
+
+                                                <img src="~/img/poster/@item.anh_bia" alt="" width="300" height="400" />
+                                                <div class="TextInImage">
+                                                    <h4>@item.ten_phim</h4>
+                                                </div>
+
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="card" style="border: 1px solid rgb(99, 98, 98)">
+                        <div class="card-header text-danger" style="background-color: rgb(99, 98, 98)">
+                            <h3 class="w3-center mt-2 ps-3" style="
+                      color: rgb(219, 145, 7);
+                      border-left: 1rem solid rgb(219, 145, 7);
+                    ">
+                                Phim Sắp Chiếu
+                                <i class="fas fa-star"></i>
+                            </h3>
+                        </div>
+                        <div class="card-body" style="background-color: rgb(27, 27, 27)">
+                            <div class="row">
+                                <div class="col-12">
+                                    <ul class="nav flex-column">
+                                        @foreach (var ls in Model)
+                                        {
+                                            <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="#">
+                                                    <img src="~/img/poster/@ls.anh_bia" class="float-start clearfix me-3" width="100" alt="" />
+                                                    <h6 class="text-white">@ls.ten_phim</h6>
+                                                    <p class="p-0 m-0">The Colony</p>
+                                                    <p class="p-0 m-0">1,481 View</p>
+                                                    <div class="d-inline-block text-warning">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

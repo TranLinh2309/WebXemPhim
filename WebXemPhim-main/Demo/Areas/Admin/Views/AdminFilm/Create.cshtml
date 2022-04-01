@@ -1,0 +1,163 @@
+﻿@model Demo.Models.Phim
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    div[class="col-12 col-md-4 col-xl-4 my-3 ms-3 me-1"]::after {
+        content: "*";
+        color: red;
+        font-size: 25px;
+    }
+</style>
+
+@using (Html.BeginForm("Create", "AdminFilm", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="container mt-3 pb-2 " style="background-color: rgb(238, 238, 238);width: 1025px; height: 814px">
+    
+        <div class="row my-1 ms-0 me-0 bg-white rounded-top border-top border-primary border-5" style="width: 1000px;height:70px">
+            <span class="display-6 ">Thêm Phim</span>
+        </div>
+        
+        <div class="bg-white">
+            <div class="row">
+                <div class="col-12 col-md-4 col-xl-4 my-3 ms-3 me-1">
+                    <label for="exampleFormControlInput1" class="form-label fs-5">
+                        Tên Phim
+                    </label>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6 my-3 ms-1 me-2">
+                    @Html.EditorFor(model => model.ten_phim, new { htmlAttributes = new { @class = "form-control" } })
+                    <p class="text-danger">  @ViewData["Loi"]</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-xl-4 my-3 ms-3 me-1">
+                    <label for="exampleFormControlInput1" class="form-label fs-5">
+                        Ảnh Bìa
+                    </label>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6 my-3 ms-1 me-2">
+                    <input type="file" name="fileUpload" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.anh_bia, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-xl-4 my-3 ms-3 me-1">
+                    <label for="exampleFormControlInput1" class="form-label  fs-5">
+                        Thể Loại
+                    </label>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6 my-3 ms-1 me-2 ">
+                    @{
+                        var index = 0;
+                    }
+                    @foreach (var phim in ViewBag.id_loai)
+                    {
+                        <span class="me-3">
+                            <input id="@phim.id_loai" type="checkbox" name="ChiTietLoais[@(index)].id_loai" value="@phim.id_loai" />
+                            <label for="@phim.id_loai">
+                                @phim.ten_loai
+                            </label>
+                        </span>
+                        index++;
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-xl-4 my-3 ms-3 me-1">
+                    <label for="exampleFormControlInput1" class="form-label fs-5">
+                        Mô Tả
+                    </label>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6 my-3 ms-1 me-2">
+                    <div>
+                        @Html.EditorFor(model => model.mo_ta, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.mo_ta, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-xl-4 my-3 ms-3 me-1">
+                    <label for="exampleFormControlInput1" class="form-label fs-5">
+                        Link Trailer
+                    </label>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6 my-3 ms-1 me-2">
+                    @Html.EditorFor(model => model.trailer, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.trailer, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-xl-4 my-3 ms-3 me-1">
+                    <label for="exampleFormControlInput1" class="form-label fs-5">
+                        Link Phim
+                    </label>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6 my-3 ms-1 me-2">
+                    @Html.EditorFor(model => model.link_phim, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.link_phim, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-xl-4 my-3 ms-3 me-1">
+                    <label for="exampleFormControlInput1" class="form-label fs-5">
+                        Trạng Thái
+                    </label>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6 my-3 ms-1 me-2">
+                    @Html.DropDownList("id_trang_thai")
+                    @Html.ValidationMessageFor(model => model.id_trang_thai, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-xl-4 my-3 ms-3 me-1">
+                    <label for="exampleFormControlInput1" class="form-label fs-5">
+                        Quốc Gia
+                    </label>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6 my-3 ms-1 me-2">
+                    @Html.DropDownList("id_quoc_gia")
+                    @Html.ValidationMessageFor(model => model.id_quoc_gia, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-xl-4 my-2 ms-3 me-1">
+                    <label for="exampleFormControlInput1" class="form-label fs-5">
+                        Năm Phát Hành
+                    </label>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6 my-2 ms-1 me-2">
+                    @Html.DropDownList("id_nam")
+                    @Html.ValidationMessageFor(model => model.id_nam, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-1 ms-0 me-0 bg-white rounded-bottom border-bottom border-primary border-5">
+            <div class="bg-white pb-2 pt-2 " style="width: contain">
+                <div class="">
+                    <input type="submit" value="Create" class="btn btn-primary " style="height: 50px; width: 150px" />
+
+                    <button class="bg-danger text-white rounded-3 ms-2" style="height: 50px; width: 150px;">@Html.ActionLink("Back to List", "Index", null, null, new { @class = "nav-link text-white" })</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+}
+
+
+
+
+
+
+
+
+

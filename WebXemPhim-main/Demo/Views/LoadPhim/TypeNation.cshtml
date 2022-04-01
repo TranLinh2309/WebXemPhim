@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Demo.Models.QuocGia>
+
+<div class="card-body">
+    <div class="row">
+        @foreach (var types in Model)
+        {
+            <div class="col-12 col-md-12 col-xl-3 mb-3">
+                <a href="@Url.Action("NationForType","LoadPhim", new { id= types.id_quoc_gia} )" class="dropdown-item" style="color: rgb(221, 147, 9)">
+                    @types.ten_quoc_gia
+                </a>
+            </div>
+        }
+    </div>
+</div>
